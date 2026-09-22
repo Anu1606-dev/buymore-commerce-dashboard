@@ -1,0 +1,32 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+$first  = isset( $products[0] ) ? $products[0] : array();
+$second = isset( $products[1] ) ? $products[1] : $first;
+?>
+<section class="dashboard-shell" data-dashboard>
+  <aside class="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="#top"><span>Buy</span>More</a>
+    <nav class="main-nav">
+      <a href="#products"><span class="nav-icon">ϟ</span> Popular Products</a>
+      <a class="is-active" href="#products"><span class="nav-icon">◉</span> Explore Now</a>
+      <a href="#products"><span class="nav-icon">▱</span> Clothing and Shoes</a>
+      <a href="#products"><span class="nav-icon">▦</span> Gifts and Living</a>
+      <a href="#products"><span class="nav-icon">♧</span> Inspiration</a>
+    </nav>
+    <div class="sidebar-section"><span class="section-label">Quick actions</span><button class="sidebar-action" type="button" data-toast="Product request started"><span>＋</span> Request for product</button><button class="sidebar-action" type="button" data-toast="Member invite ready"><span>＋</span> Add member</button></div>
+    <div class="sidebar-section recent-orders"><span class="section-label">Last orders <strong>37</strong></span><a href="#orders"><span class="mini-avatar avatar-one"></span> DXL Nike...view order</a><a href="#orders"><span class="mini-avatar avatar-two"></span> Outerwear...view order</a><a class="see-all" href="#orders">See all</a></div>
+    <button class="logout" type="button" data-toast="You are still signed in for this demo"><span>↪</span> Log out</button>
+  </aside>
+  <section class="dashboard-main" id="top">
+    <header class="topbar"><div class="order-count"><strong>37</strong><span>Orders<br><small>Last 7 days</small></span></div><div class="view-switcher" role="tablist"><button class="view-tab is-active" type="button" data-view-tab="dashboard">▣&nbsp; Dashboard</button><button class="view-tab" type="button" data-view-tab="website">Website</button></div><div class="topbar-actions"><button class="cart-button" type="button" data-cart><span>▢</span> Cart <b>0</b></button><div class="tiny-stack"><span class="tiny-avatar avatar-three"></span><span class="tiny-avatar avatar-four"></span><em>+8</em></div><div class="profile"><span class="profile-avatar"></span><span>Ryana</span></div></div></header>
+    <div class="content" id="products"><div class="content-heading"><div><p class="eyebrow">Fresh picks for your wardrobe</p><h1>Explore</h1></div><div class="content-tools"><button class="filter-button" type="button" data-filter-toggle>☷&nbsp; Filters</button><label class="search-control"><span>⌕</span><input type="search" placeholder="Search products" aria-label="Search products" data-search></label></div></div>
+      <div class="category-tabs" role="tablist"><button class="category-tab is-active" type="button" data-category="all">▣&nbsp; All</button><button class="category-tab" type="button" data-category="men">♙&nbsp; Men</button><button class="category-tab" type="button" data-category="women">♧&nbsp; Women</button><span class="active-indicator"></span></div>
+      <div class="filter-panel" data-filter-panel hidden><span>Showing curated picks</span><button type="button" data-sort="low">Price: low to high</button><button type="button" data-sort="high">Price: high to low</button></div>
+      <div class="catalogue-grid"><div class="feature-column"><article class="promo-card promo-mint"><div class="promo-copy"><strong>Get up to <span>50% off</span></strong><button type="button" data-toast="Discounts unlocked">Get Discount</button></div><div class="promo-art art-mint"><span class="shape shape-one"></span><span class="shape shape-two"></span><span class="shape shape-three"></span></div></article><article class="promo-card promo-yellow"><div class="promo-copy"><strong>Winter’s weekend</strong><small>keep it casual</small></div><span class="yellow-model"></span><button class="round-arrow" type="button" data-toast="Opening winter collection">↗</button></article><div class="feature-bottom"><article class="photo-card large-photo product-card" data-category="women" data-price="119" data-name="Warm knit outfit"><button class="heart-button" type="button" data-favourite>♡</button><div class="photo-art woman-art"></div><button class="offer-button" type="button" data-add data-product="Warm knit outfit">Avail Offers</button></article><article class="favourites-card"><div class="card-title-row"><strong>Favourites</strong><span><button type="button">‹</button><button type="button">›</button></span></div><div class="favourite-list"><div class="small-person person-one"></div><div class="small-person person-two"></div></div><button class="see-button" type="button" data-toast="Favourites opened">See All</button></article></div></div>
+        <div class="product-column"><div class="product-row"><?php foreach ( array( $first, $second ) as $product ) : ?><article class="product-card product-tile" data-category="<?php echo esc_attr( $product['category'] ); ?>" data-price="<?php echo esc_attr( $product['price'] ); ?>" data-name="<?php echo esc_attr( $product['name'] ); ?>"><div class="product-image" style="background-image:url('<?php echo esc_url( $product['image'] ); ?>')"></div><button class="heart-button" type="button" aria-label="Favourite <?php echo esc_attr( $product['name'] ); ?>" data-favourite>♡</button><div class="product-meta"><small><?php echo esc_html( $product['label'] ); ?></small><strong><?php echo esc_html( $product['name'] ); ?></strong><button class="price-pill" type="button" data-add data-product="<?php echo esc_attr( $product['name'] ); ?>">$<?php echo esc_html( $product['price'] ); ?></button></div></article><?php endforeach; ?></div><article class="promo-card promo-blue"><div class="promo-copy"><strong>Bring Bold Fashion</strong><small>Lay ers on Layers</small></div><div class="blue-model"></div><button class="round-arrow" type="button" data-toast="Opening bold fashion collection">↗</button></article><div class="mobile-results" data-empty hidden>No products match this search.</div></div>
+      </div><p class="sr-status" aria-live="polite" data-status></p>
+    </div>
+  </section>
+</section>
+<div class="toast" role="status" aria-live="polite" data-toast-region></div>
+
