@@ -2,11 +2,23 @@
 
 BuyMore is a custom-coded WordPress plugin that recreates the supplied commerce dashboard reference image. It is built with PHP, semantic HTML, CSS, and vanilla JavaScript only: no Elementor or other page builder is required.
 
+## Screenshots
+
+The repository includes the supplied UI captures to document the finished responsive dashboard and its interactive states.
+
+### Explore dashboard
+
+![BuyMore Explore dashboard](assets/screenshots/explore-dashboard.png)
+
+### Gifts and Living with account menu
+
+![BuyMore Gifts and Living dashboard with account menu](assets/screenshots/gifts-and-living-account-menu.png)
+
 ## What is included
 
 - `buymore-dashboard/` - installable WordPress plugin.
 - `index.html` - static GitHub Pages demo using the same visual language and interactions.
-- `assets/` - shared responsive CSS and vanilla JavaScript for the static demo.
+- `assets/` - shared responsive CSS, vanilla JavaScript, and README screenshots for the static demo.
 - `.github/workflows/pages.yml` - deploys the static demo to GitHub Pages.
 
 ## WordPress installation
