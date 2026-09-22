@@ -8,7 +8,7 @@
   --yellow: #ffe99c;
   --shell: #fff;
   --radius-lg: 26px;
-  --shadow: 0 24px 70px rgba(47, 87, 68, .12);
+  --shadow: 0 24px 70px rgba(47, 87, 68, .22);
   font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -36,7 +36,8 @@ button { border: 0; cursor: pointer; }
 .product-row > :nth-child(1) { animation-delay: .2s; }
 .product-row > :nth-child(2) { animation-delay: .26s; }
 .promo-blue { animation-delay: .34s; }
-.promo-card:hover, .product-card:hover, .favourites-card:hover { transform: translateY(-4px); box-shadow: 0 14px 25px rgba(46,67,74,.12); }
+.promo-card:hover, .product-card:hover, .favourites-card:hover { transform: translateY(-5px) translateX(2px); box-shadow: 0 18px 30px rgba(46,67,74,.24); }
+.promo-card:focus-visible, .product-card:focus-visible, .favourites-card:focus-visible { outline: 3px solid rgba(39,105,232,.42); outline-offset: 3px; }
 .promo-card.is-activated, .product-card.is-activated, .favourites-card.is-activated { animation: card-select .48s cubic-bezier(.2,.8,.2,1); border-color: rgba(39,105,232,.28); }
 .shape-one, .shape-two, .shape-three, .yellow-model, .blue-model { animation: art-float 5.5s ease-in-out infinite; }
 .shape-two { animation-delay: -.9s; }
@@ -91,7 +92,7 @@ button { border: 0; cursor: pointer; }
 .profile-avatar { width: 24px; height: 24px; background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=90&q=80'); }
 .account-wrap { position: relative; }
 .account-wrap .profile { cursor: pointer; }
-.account-menu { position: absolute; z-index: 6; top: 39px; right: 0; width: 190px; padding: 10px; border: 1px solid #eeeeef; border-radius: 15px; background: #fff; box-shadow: 0 18px 36px rgba(22,34,50,.16); }
+.account-menu { position: absolute; z-index: 6; top: 39px; right: 0; width: 190px; padding: 10px; border: 1px solid #eeeeef; border-radius: 15px; background: #fff; box-shadow: 0 18px 36px rgba(22,34,50,.24); }
 .account-menu[hidden] { display: none; }
 .account-menu-header { padding: 4px 7px 8px; border-bottom: 1px solid #f0f0f0; color: #8d8e92; font-size: 8px; }
 .account-option { display: flex; align-items: center; gap: 8px; width: 100%; padding: 8px 7px; border-radius: 10px; background: transparent; color: #323338; text-align: left; font-size: 9px; }
@@ -176,7 +177,7 @@ h1 { margin: 0; font-size: 20px; letter-spacing: -.8px; }
 .woman-art { background: linear-gradient(0deg, rgba(238,110,57,.18), rgba(238,110,57,.05)), url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=550&q=85') center/cover; }
 .small-person { background: linear-gradient(0deg, rgba(255,233,218,.12), rgba(255,233,218,.05)), url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=260&q=85') center/cover; }
 .person-two { background-image: linear-gradient(0deg, rgba(255,233,218,.08), rgba(255,233,218,.02)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=260&q=85'); }
-.cart-drawer { position: fixed; z-index: 8; top: 0; right: 0; display: flex; flex-direction: column; width: min(350px, 92vw); height: 100dvh; padding: 20px; background: #fff; box-shadow: -20px 0 60px rgba(25,37,50,.15); transform: translateX(105%); transition: transform .28s ease; }
+.cart-drawer { position: fixed; z-index: 8; top: 0; right: 0; display: flex; flex-direction: column; width: min(350px, 92vw); height: 100dvh; padding: 20px; background: #fff; box-shadow: -20px 0 60px rgba(25,37,50,.24); transform: translateX(105%); transition: transform .28s ease; }
 .cart-drawer.is-open { transform: translateX(0); }
 .cart-drawer[hidden] { display: flex; }
 .cart-backdrop { position: fixed; z-index: 7; inset: 0; background: rgba(26,32,40,.25); opacity: 0; pointer-events: none; transition: opacity .28s ease; }
@@ -196,12 +197,19 @@ h1 { margin: 0; font-size: 20px; letter-spacing: -.8px; }
 .toast { position: fixed; right: 22px; bottom: 22px; z-index: 10; max-width: 260px; padding: 12px 16px; border-radius: 13px; background: #24262c; color: white; opacity: 0; transform: translateY(10px); transition: .25s ease; pointer-events: none; font-size: 11px; }
 .toast.is-visible { opacity: 1; transform: translateY(0); }
 .sr-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+/* Keep every control on the same blue, lifted interaction language as the sidebar. */
+.main-nav a, .sidebar-action, .recent-orders a, .logout, .view-tab, .cart-button, .profile, .filter-button, .search-control, .category-tab, .filter-panel button, .promo-copy button, .round-arrow, .heart-button, .offer-button, .card-title-row button, .see-button, .price-pill, .drawer-close, .cart-item-remove, .checkout-button, .account-option { transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.main-nav a:hover, .main-nav a:focus-visible, .sidebar-action:hover, .sidebar-action:focus-visible, .recent-orders a:hover, .recent-orders a:focus-visible, .logout:hover, .logout:focus-visible, .view-tab:hover, .view-tab:focus-visible, .cart-button:hover, .cart-button:focus-visible, .profile:hover, .profile:focus-visible, .profile.is-open, .filter-button:hover, .filter-button:focus-visible, .search-control:hover, .category-tab:hover, .category-tab:focus-visible, .filter-panel button:hover, .filter-panel button:focus-visible, .promo-copy button:hover, .promo-copy button:focus-visible, .round-arrow:hover, .round-arrow:focus-visible, .heart-button:hover, .heart-button:focus-visible, .offer-button:hover, .offer-button:focus-visible, .card-title-row button:hover, .card-title-row button:focus-visible, .see-button:hover, .see-button:focus-visible, .price-pill:hover, .price-pill:focus-visible, .drawer-close:hover, .drawer-close:focus-visible, .cart-item-remove:hover, .cart-item-remove:focus-visible, .checkout-button:hover, .checkout-button:focus-visible, .account-option:hover, .account-option:focus-visible { color: #fff; background: var(--blue); box-shadow: 0 10px 20px rgba(39,105,232,.3); transform: translateX(2px) translateY(-2px); }
+.search-control:hover input { color: #fff; }
+.search-control:hover input::placeholder { color: rgba(255,255,255,.78); }
+.offer-button:hover, .offer-button:focus-visible { transform: translateX(-50%) translateY(-2px); }
+.price-pill, .checkout-button { box-shadow: 0 8px 16px rgba(39,105,232,.22); }
 @keyframes shell-in { from { opacity: 0; transform: scale(.985) translateY(12px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 @keyframes fade-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes card-in { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes art-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
 @keyframes active-pulse { 0%, 100% { box-shadow: 0 8px 15px rgba(39,105,232,.2); } 50% { box-shadow: 0 10px 22px rgba(39,105,232,.32); } }
-@keyframes card-select { 0% { transform: translateY(-4px) scale(1); } 45% { transform: translateY(-7px) scale(1.018); } 100% { transform: translateY(-4px) scale(1); } }
+@keyframes card-select { 0% { transform: translateY(-5px) translateX(2px) scale(1); } 45% { transform: translateY(-9px) translateX(2px) scale(1.018); } 100% { transform: translateY(-5px) translateX(2px) scale(1); } }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
