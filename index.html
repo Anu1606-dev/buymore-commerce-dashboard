@@ -40,9 +40,9 @@
           <button class="view-tab" type="button" role="tab" aria-selected="false" data-view-tab="website">Website</button>
         </div>
         <div class="topbar-actions">
-          <button class="cart-button" type="button" data-cart><span>▢</span> Cart <b>0</b></button>
+          <button class="cart-button" type="button" data-cart><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 8h12v11H6z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg> Cart <b data-cart-count>0</b></button>
           <div class="tiny-stack" aria-label="Community members"><span class="tiny-avatar avatar-three"></span><span class="tiny-avatar avatar-four"></span><em>+8</em></div>
-          <div class="profile"><span class="profile-avatar"></span><span>Ryana</span></div>
+          <div class="account-wrap"><button class="profile" type="button" data-account-toggle aria-expanded="false"><span class="profile-avatar"></span><span data-account-name>Ryana</span><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></svg></button><div class="account-menu" data-account-menu hidden><div class="account-menu-header">Switch account</div><button class="account-option is-current" type="button" data-account="Ryana" data-avatar="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=90&q=80"><span class="mini-avatar avatar-two"></span><span>Ryana<br><small>Personal shopper</small></span></button><button class="account-option" type="button" data-account="Anya" data-avatar="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=90&q=80"><span class="mini-avatar avatar-four"></span><span>Anya<br><small>Style editor</small></span></button></div></div>
         </div>
       </header>
 
@@ -105,8 +105,8 @@
       </div>
     </section>
   </main>
+  <div class="cart-backdrop" data-cart-backdrop></div><aside class="cart-drawer" data-cart-drawer aria-label="Shopping cart" aria-hidden="true"><div class="cart-header"><strong>Your cart</strong><button class="drawer-close" type="button" data-cart-close aria-label="Close cart">×</button></div><div class="cart-items" data-cart-items><div class="cart-empty">Your cart is waiting for a great find.</div></div><div class="cart-summary"><span>Subtotal</span><strong data-cart-subtotal>$0</strong></div><button class="checkout-button" type="button" data-checkout>Checkout</button></aside>
   <div class="toast" role="status" aria-live="polite" data-toast-region></div>
   <script src="assets/app.js" defer></script>
 </body>
 </html>
-
