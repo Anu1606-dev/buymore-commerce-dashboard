@@ -29,7 +29,7 @@ button { border: 0; cursor: pointer; }
 .dashboard-main { animation: fade-up .55s .14s both; }
 .main-nav a { transition: background .2s, color .2s, transform .2s, box-shadow .2s; }
 .main-nav a.is-active { animation: active-pulse 3.5s 1s ease-in-out infinite; }
-.promo-card, .product-card, .favourites-card { animation: card-in .55s both; transition: transform .25s ease, box-shadow .25s ease; }
+.promo-card, .product-card, .favourites-card { animation: card-in .55s both; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; cursor: pointer; }
 .catalogue-grid > :nth-child(1) .promo-card:nth-child(1) { animation-delay: .18s; }
 .catalogue-grid > :nth-child(1) .promo-card:nth-child(2) { animation-delay: .24s; }
 .feature-bottom > * { animation: card-in .55s .3s both; }
@@ -37,6 +37,7 @@ button { border: 0; cursor: pointer; }
 .product-row > :nth-child(2) { animation-delay: .26s; }
 .promo-blue { animation-delay: .34s; }
 .promo-card:hover, .product-card:hover, .favourites-card:hover { transform: translateY(-4px); box-shadow: 0 14px 25px rgba(46,67,74,.12); }
+.promo-card.is-activated, .product-card.is-activated, .favourites-card.is-activated { animation: card-select .48s cubic-bezier(.2,.8,.2,1); border-color: rgba(39,105,232,.28); }
 .shape-one, .shape-two, .shape-three, .yellow-model, .blue-model { animation: art-float 5.5s ease-in-out infinite; }
 .shape-two { animation-delay: -.9s; }
 .shape-three { animation-delay: -1.8s; }
@@ -52,7 +53,8 @@ button { border: 0; cursor: pointer; }
 .brand span { font-weight: 500; }
 .main-nav, .sidebar-section { display: grid; gap: 6px; }
 .main-nav a, .sidebar-action, .recent-orders a, .logout { display: flex; align-items: center; gap: 9px; padding: 9px 10px; border-radius: 12px; background: transparent; color: #45464b; font-size: 10px; text-decoration: none; text-align: left; transition: background .2s, color .2s, transform .2s; }
-.main-nav a:hover, .sidebar-action:hover, .recent-orders a:hover, .logout:hover { color: var(--blue); transform: translateX(2px); }
+.main-nav a:hover, .main-nav a:focus-visible { color: #fff; background: var(--blue); box-shadow: 0 8px 15px rgba(39,105,232,.2); transform: translateX(2px); }
+.sidebar-action:hover, .recent-orders a:hover, .logout:hover { color: var(--blue); transform: translateX(2px); }
 .main-nav a.is-active { color: #fff; background: var(--blue); box-shadow: 0 8px 15px rgba(39,105,232,.2); }
 .nav-icon { width: 13px; text-align: center; font-size: 13px; }
 .sidebar-section { margin-top: 26px; padding-top: 17px; border-top: 1px solid var(--line); }
@@ -199,6 +201,7 @@ h1 { margin: 0; font-size: 20px; letter-spacing: -.8px; }
 @keyframes card-in { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes art-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
 @keyframes active-pulse { 0%, 100% { box-shadow: 0 8px 15px rgba(39,105,232,.2); } 50% { box-shadow: 0 10px 22px rgba(39,105,232,.32); } }
+@keyframes card-select { 0% { transform: translateY(-4px) scale(1); } 45% { transform: translateY(-7px) scale(1.018); } 100% { transform: translateY(-4px) scale(1); } }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
@@ -216,7 +219,7 @@ h1 { margin: 0; font-size: 20px; letter-spacing: -.8px; }
   .brand { margin: 0 auto 0 0; }
   .main-nav { display: flex; gap: 4px; }
   .main-nav a { padding: 8px; white-space: nowrap; font-size: 9px; }
-  .main-nav a:not(.is-active) { display: none; }
+.main-nav a:not(.is-active) { display: flex; }
   .sidebar-section, .logout { display: none; }
   .topbar { flex-wrap: wrap; padding: 14px 16px; }
   .order-count { min-width: 110px; }

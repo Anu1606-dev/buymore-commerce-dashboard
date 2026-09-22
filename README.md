@@ -21,6 +21,8 @@ The shortcode queries the `bm_product` custom post type. If no products exist ye
 ## Dynamic content and interactions
 
 - Product cards are generated from WordPress content and post meta rather than hard-coded page-builder blocks.
+- The sidebar is a real section switcher: Popular Products, Explore Now, Clothing and Shoes, Gifts and Living, and Inspiration update the active state, URL hash, heading, and product grid.
+- Every promotional/product tile is keyboard-focusable and clickable, with hover lift and selected-card feedback.
 - The All / Men / Women controls filter products client-side.
 - Search, filter, favourite, tab, and cart controls are keyboard-accessible and provide visible feedback.
 - The plugin registers a REST endpoint at `/wp-json/buymore/v1/products` for integrations and headless previews.
@@ -40,4 +42,3 @@ GitHub Pages cannot execute PHP, so the live Pages URL is the visual/static demo
 - CMS usability: products can be created and edited through the WordPress admin.
 - Code structure: plugin bootstrap, view rendering, admin fields, styles, and script behaviour are separated and documented.
 - Technical explanation: this README documents installation, content handling, and the static deployment trade-off.
-

@@ -11,12 +11,12 @@
   <main class="dashboard-shell" data-dashboard>
     <aside class="sidebar" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="BuyMore home"><span>Buy</span>More</a>
-      <nav class="main-nav">
-        <a href="#products"><span class="nav-icon">ϟ</span> Popular Products</a>
-        <a class="is-active" href="#products"><span class="nav-icon">◉</span> Explore Now</a>
-        <a href="#products"><span class="nav-icon">▱</span> Clothing and Shoes</a>
-        <a href="#products"><span class="nav-icon">▦</span> Gifts and Living</a>
-        <a href="#products"><span class="nav-icon">♧</span> Inspiration</a>
+      <nav class="main-nav" aria-label="Store sections">
+        <a href="#popular" data-section="popular"><span class="nav-icon">ϟ</span> Popular Products</a>
+        <a class="is-active" href="#explore" data-section="explore"><span class="nav-icon">◉</span> Explore Now</a>
+        <a href="#clothing" data-section="clothing"><span class="nav-icon">▱</span> Clothing and Shoes</a>
+        <a href="#gifts" data-section="gifts"><span class="nav-icon">▦</span> Gifts and Living</a>
+        <a href="#inspiration" data-section="inspiration"><span class="nav-icon">♧</span> Inspiration</a>
       </nav>
       <div class="sidebar-section">
         <span class="section-label">Quick actions</span>
@@ -49,8 +49,8 @@
       <div class="content" id="products">
         <div class="content-heading">
           <div>
-            <p class="eyebrow">Fresh picks for your wardrobe</p>
-            <h1>Explore</h1>
+            <p class="eyebrow" data-page-eyebrow>Fresh picks for your wardrobe</p>
+            <h1 data-page-title>Explore</h1>
           </div>
           <div class="content-tools">
             <button class="filter-button" type="button" data-filter-toggle>☷&nbsp; Filters</button>
